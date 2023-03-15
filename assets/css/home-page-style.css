@@ -15,6 +15,7 @@ body::before {
     height: 100%;
     position: absolute;
     opacity: 0.2;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
    
 }
 
@@ -48,8 +49,9 @@ body::before {
  .card {
     border: 0.3rem solid white;
     width: calc(100% / 3 - 8%);
-    height: 35vh;
+    height: 70vh;
     position: relative;
+    transition: filter .5s ease-in-out;
     
 
  }
@@ -132,4 +134,27 @@ body::before {
 
  .card--hovered .card__image {
    transform: scale(1.4);
+   filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, .5));
+ }
+
+ body#kdrama-01-hovered::before {
+  background-image: url('/assets/images/alquimia6-background.png');
+ }
+
+ 
+ body#kdrama-02-hovered::before {
+  background-image: url('/assets/images/aterrizaje.jpg');
+ }
+
+ 
+ body#kdrama-03-hovered::before {
+  background-image: url('/assets/images/fadaanddemon.jpg');
+ }
+
+ body[id^="kdrama-"]::before {
+  opacity: 1;
+ }
+
+ body[id^="kdrama-"] .card:not(.card--hovered) {
+  filter: grayscale(100%);
  }
