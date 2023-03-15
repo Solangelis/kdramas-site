@@ -60,6 +60,7 @@ body::before {
     object-fit: cover;
     position: absolute;
     opacity: 1;
+    transition: opacity 1s ease-in-out;
  }
 
  .card__image {
@@ -67,6 +68,7 @@ body::before {
     height: 100%;
     object-fit: contain;
     position: relative;
+    transition:  1s ease-in-out;
   
    
 
@@ -118,5 +120,16 @@ body::before {
  }
 
  .controller__button:hover {
+   transform: scale(1.4);
+ }
+
+ /* Hover Animation */
+ .card--hovered .card__background {
+   cursor: pointer;
+   opacity: 0;
+
+ }
+
+ .card--hovered .card__image {
    transform: scale(1.4);
  }
